@@ -17,11 +17,9 @@ void server(int argc, char * argv[])
 
     struct sockaddr_in serv_addr, cli_addr;
     if(argc < 5)
-    {
       error_log(1, "Bad arguments >:(, use chat -h or chat --help");
-    }
 
-    int i = 1;
+    int i = 2;
     bool condition;
     while(argv[i] != NULL)
     {
