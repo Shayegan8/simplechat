@@ -9,35 +9,12 @@
 
 void server(int argc, char * argv[])
 {  
-  if(strcmp(argv[1], "server") == 0)
-  {
     int sock, newsock, port, io;
     socklen_t clength;
     char buffer[1024];
 
     struct sockaddr_in serv_addr, cli_addr;
-    if(argc < 5)
-      error_log(1, "Bad arguments >:(, use chat -h or chat --help");
 
-    int i = 2;
-    bool condition;
-    while(argv[i] != NULL)
-    {
-      if(strcmp(argv[i], "-h") == 0)
-      {
-        condition = strcmp(argv[i], "-h");
-        break;
-      } else if(strcmp(argv[i], "--help") == 0)
-      {
-        condition = strcmp(argv[i], "--help");
-        break;
-      }
-      i++;
-    }
-  
-    if(condition == 1)
-      error_log(EXIT_FAILURE, "Usage: chat \"server/client\" \"hostname\" \"port\" \"username\"");
-  
     sock = socket(AF_INET, SOCK_STREAM, 0);
     if(sock < 0)
       error_log(EXIT_FAILURE, "Cant open the socket");
@@ -86,6 +63,5 @@ void server(int argc, char * argv[])
         write(sock, str, sizeof(str));
         break;
       }
-    }
   }  
 }

@@ -18,33 +18,6 @@ int client(int argc, char * argv[])
   int sock, port, io;
   struct sockaddr_in serv_addr;
   struct hostent *server;
-  if(argc < 5)
-    error_log(EXIT_FAILURE, "Bad arguments >:( , use chat -h or chat --help");
-
-  if(argc == 0)
-    error_log(EXIT_SUCCESS, "No arguments inserted, nothing to do");
-
-  int i = 2;
-  bool condition;
-  while(argv[i] != NULL)
-  { 
-    if(strcmp(argv[i], "-h") == 0)
-    {
-      condition = strcmp(argv[i], "-h");
-      break;
-    }
-    else if(strcmp(argv[i], "--help"))
-    {
-      condition = strcmp(argv[i], "--help");
-      break;
-    }
-    i++;
-  }
-
-  i = 0;
-  
-  if(condition == 1)
-    error_log(EXIT_FAILURE, "Usage: chat \"server/client\" \"hostname\" \"port\" \"username\" "); 
 
   port = atoi(argv[3]);
   sock = socket(AF_INET, SOCK_STREAM, 0); //establishing tcp connection
