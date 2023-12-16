@@ -7,7 +7,7 @@
 
 int main(int argc, char * argv[])
 {
-  if(argc < 5)
+  if(argc < 3)
     error_log(EXIT_FAILURE, "Bad arguments >:( , use chat -h or chat --help");
 
   if(argc == 0)
@@ -19,12 +19,12 @@ int main(int argc, char * argv[])
   { 
     if(strcmp(argv[i], "-h") == 0)
     {
-      condition = strcmp(argv[i], "-h");
+      condition = strcmp(argv[i], "-h") == 0 ? 1 : 0;
       break;
     }
     else if(strcmp(argv[i], "--help"))
     {
-      condition = strcmp(argv[i], "--help");
+      condition = strcmp(argv[i], "--help") == 0 ? 1 : 0;
       break;
     }
     i++;

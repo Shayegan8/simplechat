@@ -7,6 +7,7 @@
 #include "errori.h"
 #include <stdbool.h>
 
+// server/client hostname port
 void server(int argc, char * argv[])
 {  
     int sock, newsock, port, io;
