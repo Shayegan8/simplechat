@@ -11,7 +11,19 @@ void error_log(int i, char * msg)
 	exit(i);
 }
 
-void log_inf(char * msg)
+char * format_string(char * string)
+{
+
+	size_t str_size = strlen(string);
+	
+	return string;	
+}
+
+/**
+	@apiNote max args = 3
+*/
+
+void log_inf(char * msg, char * args, ...)
 {
 	FILE * wF = fopen("/usr/local/share/simplechat/latest.log", "a+");
 	time_t outime;

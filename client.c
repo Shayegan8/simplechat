@@ -27,8 +27,10 @@ int client(int argc, char * argv[])
   server = gethostbyname(argv[2]);
   
   if(server = NULL)
+  {
     error_log(1, "no such a host");
-
+    log_inf("Couldn't found host", "i complete it in tommorow");
+  }
   memset((char *) &serv_addr, '\0', sizeof(serv_addr));
   serv_addr.sin_family = AF_INET;
   bcopy((char *) server->h_addr, (char *) &serv_addr.sin_addr.s_addr , server->h_length);
