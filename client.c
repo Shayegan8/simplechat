@@ -12,7 +12,7 @@
 /**
   @args "server/client" "hostname" "port" "name"
 */
-int client(int argc, char * argv[])
+void client(int argc, char * argv[])
 {
 
   int sock, port, io;
